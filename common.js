@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var jsonValue = document.getElementById('inputTxt').value.replace('"{', '{').replace('}"', '}');
     document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue), null, 2);
 
+    // Sentry Logging
+    Sentry.captureException("Format: Value - ", jsonValue);
     copyContent();
 
   }, false);
@@ -18,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var jsonValue = document.getElementById('inputTxt').value.replace('"{', '{').replace('}"', '}');
     document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue));
 
+    // Sentry Logging
+    Sentry.captureException("DeFormat: Value - ", jsonValue);
     copyContent();
 
   }, false);
@@ -27,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
   resetButton.addEventListener('click', function() {
 
     document.getElementById('inputTxt').value = "";
-
+    // Sentry Logging
+    Sentry.captureException("Reset Event");
   }, false);
 
 }, false);
@@ -53,6 +58,8 @@ function copyContent() {
       }
     } 
     catch (err) {
+      // Sentry Logging
+      Sentry.captureException(err);
     }
   }
 }
