@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var formatButton = document.getElementById('format');
   formatButton.addEventListener('click', function() {
 
-    var jsonValue = document.getElementById('inputTxt').value.replace('"{', '{').replace('}"', '}');
-    document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue), null, 2);
-
-    // Sentry Logging
-    Sentry.captureException("Format: Value - ", jsonValue);
+    var jsonValue = null;
+    try {
+      jsonValue = document.getElementById('inputTxt').value.replace('"{', '{').replace('}"', '}');
+      document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue), null, 2);
+    } catch (err) {
+      // Sentry Logging
+      Sentry.captureException("Format Click: " + err + ", Value: " + jsonValue );
+    }
     copyContent();
 
   }, false);
@@ -17,11 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var deFormatButton = document.getElementById('deformat');
   deFormatButton.addEventListener('click', function() {
 
-    var jsonValue = document.getElementById('inputTxt').value.replace('"{', '{').replace('}"', '}');
-    document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue));
-
-    // Sentry Logging
-    Sentry.captureException("DeFormat: Value - ", jsonValue);
+    var jsonValue = null;
+    try {
+      jsonValue = document.getElementById('inputTxt').value.replace('"{', '{').replace('}"', '}');
+      document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue));
+    } catch (err) {
+      // Sentry Logging
+      Sentry.captureException("DeFormat Click: " + err + ", Value: " + jsonValue );
+    }
     copyContent();
 
   }, false);
@@ -59,7 +65,7 @@ function copyContent() {
     } 
     catch (err) {
       // Sentry Logging
-      Sentry.captureException(err);
+      Sentry.captureException("Copy Content:" + err);
     }
   }
 }
