@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue), null, 2);
     } catch (err) {
       // Sentry Logging
-      Sentry.captureException("Format Click: " + err + ", Value: " + jsonValue );
+      // Sentry.captureException("Format Click: " + err + ", Value: " + jsonValue );
     }
     copyContent();
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('inputTxt').value = JSON.stringify(JSON.parse(jsonValue));
     } catch (err) {
       // Sentry Logging
-      Sentry.captureException("DeFormat Click: " + err + ", Value: " + jsonValue );
+      // Sentry.captureException("DeFormat Click: " + err + ", Value: " + jsonValue );
     }
     copyContent();
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('inputTxt').value = "";
     // Sentry Logging
-    Sentry.captureException("Reset Event");
+    // Sentry.captureException("Reset Event");
   }, false);
 
 }, false);
@@ -65,7 +65,7 @@ function copyContent() {
     } 
     catch (err) {
       // Sentry Logging
-      Sentry.captureException("Copy Content:" + err);
+      // Sentry.captureException("Copy Content:" + err);
     }
   }
 }
