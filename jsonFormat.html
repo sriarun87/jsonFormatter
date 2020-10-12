@@ -1,35 +1,47 @@
 <html>
-  <head>
-    <!-- <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('kfadqz/specialnewz');</script> -->
-    <script type="text/javascript" src="common.js"></script>
-    <!-- <script src="https://browser.sentry-cdn.com/5.4.0/bundle.min.js" crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" type="text/css" href="common.css"></link>
-  
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-102573905-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    <!-- <script>
-      Sentry.init({ dsn: 'https://bcb2a4b6c1a54135be842478fca6b0a8@sentry.io/1482545' });
-    </script> -->
-  </head>
-  <body>
-    <div class="header">
-      <span class="bold">JSON</span><span class="italic"> formatter</span> - {<img src="icon.png" />&nbsp;&nbsp;&nbsp;&nbsp;}
-    </div>
-    <div class="inputArea">
-      <textarea class="m-top-10" id="inputTxt" placeholder="*** PASTE YOUR JSON HERE ***"></textarea>
-      <div id="copiedMsg" class="blink">... also copied to clipboard.</div>
-      <div class="m-top-20 clear">
-        <button class="button bg-dark-gray fleft" type="button" id="format">FORMAT</button>
-        <button class="button bg-dark-gray fleft m-left-20" type="button" id="deformat">DE-FORMAT</button>
-        <button class="button m-left-20 bg-dark-gray fright" type="button" id="reset">RESET</button>
-      </div>
-    </div>
-  </body>
+
+	<head>
+		<script type="text/javascript" src="common.js"></script>
+		<link rel="stylesheet" type="text/css" href="common.css">
+		</link>
+		<script>
+			window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+			ga('create', 'UA-102573905-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script async src='https://www.google-analytics.com/analytics.js'></script>
+	</head>
+
+	<body>
+		<div class='signup-container'>
+			<div class='left-container'>
+				<h1>
+					<div><i class='fas fa-paw'><img src="icon128.png" /></i></div>
+					<div>JSON <span>Formatter</span></div>
+				</h1>
+			</div>
+			<div class='right-container'>
+				<header>
+					<textarea class="m-top-10" id="inputTxt" placeholder="*** PASTE YOUR JSON HERE ***"></textarea>
+					<div id="copiedMsg" class="blink">... also copied to clipboard.</div>
+					<div id="errorMsg" class="blink">... have your input before try!!!</div>
+				</header>
+				<footer>
+					<div class='set'>
+						<div class='format-deformat'>
+							<div class='radio-container'>
+								<input checked='' id='format' name='format-deformat' type='radio'>
+								<label for='format'>FORMAT</label>
+								<input id='deformat' name='format-deformat' type='radio'>
+								<label for='deformat'>DE-FORMAT</label>
+							</div>
+						</div>
+						<button id="submit">SUBMIT</button>
+					</div>
+				</footer>
+			</div>
+		</div>
+
+	</body>
+
 </html>
