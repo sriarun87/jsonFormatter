@@ -3,7 +3,7 @@
 
     "name": "JSON Formatter",
     "description": "Format the JSON",
-    "version": "2.0",
+    "version": "2.0.1",
 
     "icons": {
         "16": "icon16.png",
