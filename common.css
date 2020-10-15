@@ -25,11 +25,13 @@ body {
 
 .left-container {
 	background: #807182;
-	overflow: hidden;
-	padding: 40px 0 0 0;
-	position: relative;
-	text-align: center;
-	width: 60px;
+    overflow: hidden;
+    padding: 40px 0 0 0;
+    position: relative;
+    text-align: center;
+    width: 50px;
+    border-right: 3px solid #f98686;
+    border-left: 3px solid #f98686;
 }
 
 .left-container h1 {
@@ -40,7 +42,7 @@ body {
 	width: 360px;
 	position: absolute;
 	bottom: 150px;
-	left: -150px;
+	left: -153px;
 }
 
 .left-container h1 div {
@@ -49,7 +51,7 @@ body {
 
 .left-container h1 div:nth-child(2) {
 	position: relative;
-	top: -3px;
+	top: -11px;
 }
 
 .left-container h1 div:nth-child(2) span {
@@ -60,15 +62,11 @@ body {
 	background: #f7b1ab;
 	border-radius: 50%;
 	color: #807182;
-	font-size: 6px;
-	margin-right: 5px;
-	padding: 5px;
 	transform: rotate(-45deg);
 }
 
 .left-container img {
-	filter: hue-rotate(120deg);
-	width: 11%;
+	width: 12%;
 }
 
 .right-container {
